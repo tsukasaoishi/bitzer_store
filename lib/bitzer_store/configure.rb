@@ -17,8 +17,8 @@ module BitzerStore
     end
 
     def set(name, *args)
-      options = default_options.merge(args.extract_options!)
-      args = args.presence || default_args
+      options = common_options.merge(args.extract_options!)
+      args = args.presence || common_args
       args << options if options.present?
 
       @settings[name] = args
@@ -28,19 +28,19 @@ module BitzerStore
       set(name, *args)
     end
 
-    def default(*args)
-      @default_options = args.extract_options!
-      @default_args = args
+    def common_setting(*args)
+      @common_options = args.extract_options!
+      @common_args = args
     end
 
     private
 
-    def default_args
-      @default_args || []
+    def common_args
+      @common_args || []
     end
 
-    def default_options
-      @default_options || {}
+    def common_options
+      @common_options || {}
     end
   end
 end

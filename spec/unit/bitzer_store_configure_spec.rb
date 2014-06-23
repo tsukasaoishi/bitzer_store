@@ -16,9 +16,9 @@ describe BitzerStore::Configure do
       expect(c.settings.values.first).to eq([:dalli, "localhost:11211", :expires_in => 600])
     end
 
-    it "use default" do
+    it "use common_setting" do
       c = BitzerStore::Configure.new
-      c.default :dalli, "localhost:11211", :expires_in => 600
+      c.common_setting :dalli, "localhost:11211", :expires_in => 600, :namespace => "tsuka"
       c.cache_name :namespace => "special"
       expect(c.settings.keys.first).to eq(:cache_name)
       expect(c.settings.values.first).to eq([:dalli, "localhost:11211", :expires_in => 600, :namespace => "special"])
