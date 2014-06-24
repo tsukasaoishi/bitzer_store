@@ -19,7 +19,7 @@ module BitzerStore
     def set(name, *args)
       options = common_options.merge(args.extract_options!)
       args = args.presence || common_args
-      args << options if options.present?
+      args = args + [options] if options.present?
 
       @settings[name] = args
     end
