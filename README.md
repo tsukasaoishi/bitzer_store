@@ -1,5 +1,7 @@
 # BitzerStore
 
+[![Gem Version](https://badge.fury.io/rb/bitzer_store.svg)](http://badge.fury.io/rb/bitzer_store) [![Build Status](https://travis-ci.org/tsukasaoishi/bitzer_store.svg?branch=master)](https://travis-ci.org/tsukasaoishi/bitzer_store) [![Code Climate](https://codeclimate.com/github/tsukasaoishi/bitzer_store/badges/gpa.svg)](https://codeclimate.com/github/tsukasaoishi/bitzer_store)
+
 The cache of Rails uses the cache cluster only one.
 BitzerStore can treat multiple cache clusters.
 
