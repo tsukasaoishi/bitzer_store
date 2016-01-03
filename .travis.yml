@@ -9,6 +9,11 @@ rvm:
   - 2.2.4
   - 2.3.0
   - ruby-head
+gemfile:
+  - gemfiles/rails3.gemfile
+  - gemfiles/rails40.gemfile
+  - gemfiles/rails41.gemfile
+  - gemfiles/rails42.gemfile
 notifications:
   emails:
     - tsukasa.oishi@gmail.com
