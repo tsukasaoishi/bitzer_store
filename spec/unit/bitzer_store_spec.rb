@@ -4,7 +4,8 @@ require 'rails'
 describe BitzerStore do
   context ".configure" do
     it "set cache_store config" do
-      c = Rails::Application::Configuration.new
+      root = Pathname.new(File.join(__dir__, ".."))
+      c = Rails::Application::Configuration.new(root)
       BitzerStore.configure(c) do |cache|
         cache.common_setting :dalli, "localhost:11211", :expires_in => 600
         cache.default :namespace => "tsuka"
